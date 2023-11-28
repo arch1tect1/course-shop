@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from apis.models import CourseResource, CategoryResource
+from tastypie.api import Api
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('shop.urls')),
-    path('api/', include('api.urls'))
+    path('api/', include('apis.urls'))
 ]
